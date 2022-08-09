@@ -1,9 +1,11 @@
 variable "standalone_records" {
   type    = list(map(any))
-  default = []
+  default = [
+    
+  ]
 }
 
 variable "zones" {
-  type    = list(map(any))
-  default = []
+  type    = map(any)
+  default = {}
 }
