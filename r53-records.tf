@@ -11,5 +11,5 @@ resource "aws_route53_record" "standalone_records" {
   name    = var.standalone_records[count.index].name
   type    = var.standalone_records[count.index].type
   ttl     = var.standalone_records[count.index].ttl
-  records = [var.standalone_records[count.index].value]
+  records = [var.standalone_records[count.index].value == "" ? var.cf_domain[count.index] : var.standalone_records[count.index].value]
 }
